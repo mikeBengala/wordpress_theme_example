@@ -1,0 +1,61 @@
+@mixin thin($size, $color){
+  font:$main-font-thin $size $main-font-family;
+  color:$color;
+}
+@mixin light($size, $color){
+  font:$main-font-light $size $main-font-family;
+  color:$color;
+}
+@mixin regular($size, $color){
+  font:$main-font-regular $size $main-font-family;
+  color:$color;
+}
+@mixin bold($size, $color){
+  font:$main-font-bold $size $main-font-family;
+  color:$color;
+}
+@mixin transition($transition, $time) {
+    -moz-transition:    $transition $time ease;
+    -o-transition:      $transition $time ease;
+    -webkit-transition: $transition $time ease;
+    transition:         $transition $time ease;
+}
+@mixin allprefix($property, $value){
+  -webkit-#{$property}: #{$value};
+  -khtml-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+//criar borders numa font
+/// Stroke font-character
+/// @param  {Integer} $stroke - Stroke width
+/// @param  {Color}   $color  - Stroke color
+/// @return {List}            - text-shadow list
+@function stroke($stroke, $color) {
+  $shadow: ();
+  $from: $stroke*-1;
+  @for $i from $from through $stroke {
+   @for $j from $from through $stroke {
+      $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+    }
+  }
+  @return $shadow;
+}
+/// Stroke font-character
+/// @param  {Integer} $stroke - Stroke width
+/// @param  {Color}   $color  - Stroke color
+/// @return {Style}           - text-shadow
+@mixin stroke($stroke, $color) {
+  text-shadow: stroke($stroke, $color);
+}
+
+
+//apply media query to element
+@mixin apply_media_query($val){
+  @media (max-width: $val) {
+    @content;
+  }
+}

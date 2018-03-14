@@ -1,0 +1,239 @@
+header{
+    background:$almostWhite;
+    overflow-x:hidden;
+    border-bottom:0.5px solid $lightGray;
+    .grid-20{
+        @include apply_media_query($mobile){
+            width:50%;
+            float:left;
+        }
+    }
+}
+.logo{
+    a{
+        float:left;
+        width:140px;
+        border-right:solid 1px $lightGray;
+        padding:28px 36px 28px 28px;
+        @include apply_media_query($mobile){
+            width:125px;
+            padding:28px 20px 28px 20px;
+            border:0;
+        }
+    }
+    img{
+        width:100%;
+    }
+
+}
+h1{
+    @include thin(23px, $darkGray);
+    text-align:center;
+    padding-top:36px;
+
+    @include apply_media_query($tablet){
+        padding-top:30px;
+    }
+
+    @include apply_media_query($mobile){
+        display:none;
+    }
+
+    br{
+        display:none;
+        @include apply_media_query($tablet){
+            display:block;
+        }
+    }
+}
+.menuToggle{
+    cursor:pointer;
+    float:right;
+    text-align:right;
+    background:$blue;
+    padding:38.5px 36px 38.5px 60px;
+
+    @include apply_media_query($tablet){
+        padding:38.5px;
+    }
+
+    .icon-menuToggle:before{
+        font-size:28px;
+        color:#fff;
+        float:left;
+    }
+    span{
+        @include regular(13px, #fff);
+        float:left;
+        margin:7px 10px 0 0;
+
+        @include apply_media_query($tablet){
+            margin:6px 4px 0 0;
+        }
+
+        @include apply_media_query($mobile){
+            display:none;
+        }
+    }
+    @include transition(background, 0.5s);
+
+    @include apply_media_query($mobile){
+        padding:35.5px;
+    }
+}
+.menuToggle:hover{
+    background:$darkGray;
+}
+.menu_close{
+    padding:29px 42px 29px 25px;
+    width:324px;
+    border-bottom:1px solid $lightGray;
+    cursor:pointer;
+    p{
+        margin: 9px 0;
+        float: left;
+    }
+    i:before{
+        font-size:28px;
+        float:left;
+        color:$darkGray;
+        @include transition(color, 0.5s);
+    }
+    span{
+        @include regular(13px, #fff);
+        float:left;
+        margin:7px 10px 0 0;
+        color:$darkGray;
+        @include transition(color, 0.5s);
+    }
+    img{
+        float:right;
+        width:48px;
+    }
+
+    @include apply_media_query($mobile){
+        width:100%;
+        padding:29px 2.5%;
+    }
+}
+.menu_close:hover{
+    i:before, span{
+        color:$blue;
+    }
+}
+.the_menu_wrap{
+    cursor:pointer;
+    background:rgba(0,0,0,0.3);
+    position:absolute;
+    z-index:10;
+    right:0;
+    top:0;
+    display:none;
+    @include transition(background, 1s);
+
+    .inner_menu_wrap{
+        position:relative;
+        width:322px;
+        float:right;
+        background:$almostWhite;
+        right:-322px;
+        @include transition(right, 0.5s);
+        overflow-y:scroll;
+        overflow-x:hidden;
+        height:100%;
+
+        @include apply_media_query($mobile){
+            width:100%;
+            right:-100%;
+        }
+    }
+
+    .inner_menu_wrap_2{
+        height:auto;
+    }
+    @include apply_media_query($mobile){
+        width:100%;
+    }
+    .current_page_item, .current_menu_item{
+        a{
+            background:$blue;
+            color:#fff;
+        }
+        .sub-menu{
+            a{
+                background:$lightGray;
+                color:$darkGray;
+            }
+            a:hover{
+                color:#fff;
+                background:$blue;
+            }
+        }
+    }
+}
+.the_menu_wrap.active{
+    .inner_menu_wrap{
+        right:0;
+    }
+}
+.menu-wrap{
+    a{
+        @include bold(20px, $darkGray);
+        width:100%;
+        padding:25px 42px;
+        text-decoration:none;
+        text-align:right;
+        border-bottom:1px solid $lightGray;
+        float:left;
+        position:relative;
+        @include allprefix(transition, "background 0.5s ease, color 0.5s ease");
+        @include allprefix(box-sizing, border-box);
+        @include apply_media_query($mobile){
+            width:100%;
+            padding:20px;
+        }
+    }
+    a:before{
+        @include transition(color, 0.5s);
+    }
+}
+.menu-item a:hover{
+    background:$blue;
+    color:#fff;
+}
+.menu-item a:hover:before{
+    color:#fff;
+}
+.menu-item-has-children{
+    a:before{
+        content:'\e909';
+        font-family: 'icomoon' !important;
+        color:$darkGray;
+        position:absolute;
+        top:28px;
+        left:30px;
+        @include apply_media_query($mobile){
+            top:24px;
+        }
+    }
+}
+.all-that{
+    overflow:hidden;
+    position:relative;
+}
+.sub-menu{
+    display:none;
+    width:100%;
+    float:left;
+    a{
+        border-bottom:1px solid #fff;
+        background:$lightGray;
+    }
+    a:before{
+        display:none;
+    }
+    @include apply_media_query($mobile){
+        display:block !important;
+        height:auto !important;
+    }
+}

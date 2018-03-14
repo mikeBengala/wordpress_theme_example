@@ -1,0 +1,22 @@
+.fade_in{
+    @include allprefix('transition', 'transform 0.5s ease, opacity 0.5s');
+    opacity:0;
+}
+.fade_in.before{
+    @include allprefix('transform', translateY(100px));
+    opacity:0;
+    @include apply_media_query($mobile){
+        @include allprefix('transform', translateY(50px));
+    }
+}
+.fade_in.active{
+    @include allprefix('transform', translateY(0));
+    opacity:1;
+}
+.fade_in.after{
+    @include allprefix('transform', translateY(-100px));
+    opacity:0;
+    @include apply_media_query($mobile){
+        @include allprefix('transform', translateY(-50px));
+    }
+}

@@ -1,0 +1,38 @@
+/*Convert pixels to em -------------------------*/
+$browser-context: 16;
+@function convertPXtoEM($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+/*Convert pixels to em -------------------------*/
+
+
+/*Define text stroke-------------------------*/
+/// Stroke font-character
+/// @param  {Integer} $stroke - Stroke width
+/// @param  {Color}   $color  - Stroke color
+/// @return {List}            - text-shadow list
+@function stroke($stroke, $color) {
+  $shadow: ();
+  $from: $stroke*-1;
+  @for $i from $from through $stroke {
+   @for $j from $from through $stroke {
+      $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+    }
+  }
+  @return $shadow;
+}
+/// Stroke font-character
+/// @param  {Integer} $stroke - Stroke width
+/// @param  {Color}   $color  - Stroke color
+/// @return {Style}           - text-shadow
+@mixin stroke($stroke, $color) {
+  text-shadow: stroke($stroke, $color);
+}
+/*Define text stroke-------------------------*/
+
+/*Define Path URL images-------------------------*/
+$baseUrl: "/wp-content/themes/aapi/";
+@function pathUrl($name) {
+  @return url(#{$baseUrl+$name})
+}
+/*Define Path URL images -------------------------*/

@@ -1,0 +1,55 @@
+.newsletter_form{
+    @include apply_media_query($mobile){
+        max-width:400px;
+        display:block;
+        margin:auto;
+    }
+    label{
+        width: 120px;
+        float: left;
+        @include light(20px, #fff);
+        padding:6px 6px 6px 0;
+
+        @include apply_media_query($mobile){
+            width:100%;
+            text-align:center;
+        }
+    }
+
+    .tnp-field{
+        margin:0 0 10px 0;
+    }
+
+    input{
+        border:0;
+        padding: 10px;
+        background:rgba(255,255,255,0.6);
+        width:240px;
+
+        @include apply_media_query($mobile){
+            width:100%;
+            text-align:center;
+            @include allprefix(box-sizing, border-box);
+        }
+    }
+
+    input[type='submit']{
+        padding:15px 20px;
+        background: $blue;
+        @include regular(15px, #fff);
+        @include allprefix('transition', 'background 0.5s ease, color 0.5s ease');
+        cursor:pointer;
+        width:170px;
+
+        @include apply_media_query($mobile){
+            display:block;
+            margin:auto;
+            float:unset;
+        }
+    }
+
+    input[type="submit"]:hover{
+        color:$blue;
+        background:#fff;
+    }
+}

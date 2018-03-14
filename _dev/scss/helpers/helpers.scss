@@ -1,0 +1,19 @@
+._boldText{
+	font-weight: 700;
+}
+/* utils class */
+.float-right{
+	float:right !important;
+}
+.float-left{
+	float:left !important;
+}
+.hide{
+	visibility:hidden;
+	display:none;
+}
+.absolute-center {
+	display:block !important;
+	margin:auto !important;
+	float:unset !important;
+}

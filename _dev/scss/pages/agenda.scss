@@ -1,0 +1,99 @@
+.agenda_archive{
+    background:$darkBlue;
+    padding-top:124px;
+    h2{
+        color:#fff;
+        @include bold(55px, #fff);
+        text-align:center;
+        width:100%;
+        float:left;
+    }
+    h2:after{
+        width:10%;
+        margin:25px 45% 0 45%;
+        height:1px;
+        background:#fff;
+        content:"";
+        float:left;
+    }
+    .line{
+        height:1px;
+        background:#fff;
+        margin-top:40px;
+        @include apply_media_query($mobile){
+            display:none;
+        }
+    }
+    .left{
+        border-right:1px solid #fff;
+        position:relative;
+        right:-.5px;
+        text-align:right;
+
+    }
+    .right{
+        border-left:1px solid #fff;
+        position:relative;
+        left:-.5px;
+        text-align:left;
+    }
+    .event_block{
+        padding-top:85px;
+        padding-bottom:150px;
+        margin-top:-450px;
+        @include apply_media_query($mobile){
+            margin-top:0;
+            right:0;
+            left:0;
+            text-align:left;
+            padding:0;
+            border:0;
+        }
+    }
+    .fade_in{
+        @include apply_media_query($mobile){
+            @include allprefix('transform','translate(0,0) !important');
+            opacity:1 !important;
+        }
+    }
+}
+.agenda_thumbnail{
+    width:100%;
+    height:auto;
+}
+.event_caption_content{
+    background:#fff;
+    padding:30px;
+    a{
+        text-decoration:none;
+    }
+    .the_cat{
+        @include thin(35px, $darkBlue);
+    }
+    h3{
+        @include bold(35px, $superDarkBlue);
+    }
+    .the_excerpt{
+        @include thin(35px, $blue);
+    }
+}
+.event_loop_wrap{
+    margin-top:450px;
+    float:left;
+
+    @include apply_media_query($mobile){
+        margin:0 0 100px 0;
+    }
+}
+.event_block:before{
+    display:none;
+    width:50%;
+    height:100px;
+    border-right:1px solid #fff;
+    visibility: visible;
+    content:'estou aqui';
+
+    @include apply_media_query($mobile){
+        display:block;
+    }
+}

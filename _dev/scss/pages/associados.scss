@@ -1,0 +1,128 @@
+
+.associados_archive{
+    background:$almostWhite;
+
+    .page_content_wrap{
+        min-height:600px;
+    }
+    .page_illustration{
+        @include apply_media_query($mobile){
+            display: none;
+        }
+    }
+    h2{
+        @include bold(55px, $superDarkBlue);
+
+        @include apply_media_query($mobile){
+            text-align:center;
+        }
+
+        @include apply_media_query($mobile){
+            font-size:40px;
+        }
+    }
+    h2:after{
+        width:10%;
+        margin:25px 90% 35px 0;
+        content:'';
+        height:1px;
+        background:$blue;
+        float:left;
+        visibility:visible;
+        @include apply_media_query($mobile){
+            margin:25px 45% 35px 45%;
+        }
+    }
+}
+.associado_archive_wrap{
+    display:none;
+    .associado_archive_inner_wrap{
+        width:100%;
+        background:#fff;
+        height:200px;
+        margin-bottom:20px;
+        position:relative;
+        overflow:hidden;
+
+        @include apply_media_query($laptop){
+            height:150px;
+        }
+
+        @include apply_media_query($mobile){
+            height:200px;
+            max-width:350px;
+            display:block;
+            margin:0 auto 20px auto;
+        }
+    }
+
+    img{
+        position:absolute;
+        width:90%;
+        margin:0 5%;
+        top:50%;
+        @include allprefix(transform, translateY(-50%));
+    }
+}
+.associado_archive_wrap.visible{
+    display:block;
+}
+.filter_side_bar{
+    position: absolute;
+    top: 254px;
+    @include apply_media_query($mobile){
+        margin-top:10px;
+        position:relative;
+        top:0;
+        display:none;
+    }
+}
+.side_bar_parent{
+    position:relative;
+}
+.filter_wrap{
+    background:$superDarkBlue;
+    padding:20px 10px 13px 10px;
+    margin-bottom:15px;
+    @include allprefix(box-sizing, border-box);
+
+    h3{
+        @include bold(21px, #fff);
+        margin-bottom:10px;
+    }
+
+    select{
+        width:100%;
+        @include allprefix(box-sizing, border-box);
+        @include allprefix(border-radius, 4px);
+        border:0;
+        background:rgba(242,242,242,0.8);
+        @include thin(14px, $darkGray);
+    }
+    option{
+        padding:13px 10px;
+        @include allprefix(box-sizing, border-box);
+        border:0;
+    }
+
+    input[type="text"]{
+        width:100%;
+        @include allprefix(box-sizing, border-box);
+        @include allprefix(border-radius, 4px);
+        border:0;
+        background:rgba(242,242,242,0.8);
+        @include thin(14px, $darkGray);
+        padding:13px 10px;
+        position:relative;
+    }
+}
+.side_bar_toggle_button{
+    display:none;
+    text-align:center;
+    cursor:pointer;
+    margin:50px 0 10px 0;
+    @include regular(15px, $blue);
+    @include apply_media_query($mobile){
+        display:block;
+    }
+}

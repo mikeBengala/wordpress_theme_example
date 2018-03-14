@@ -1,0 +1,33 @@
+/*!
+Theme Name: aapi
+Theme URI: www.gfn.pt
+Author: GFN - Global Four Net
+Author URI: www.gfn.pt
+*/
+@import "resets/resets.scss";
+@import "helpers/functions.scss";
+@import "helpers/mixins.scss";
+@import "helpers/helpers.scss";
+@import "helpers/config.scss";
+@import "helpers/scroll_animations.scss";
+@import "libs/unsemantic-grid-base.scss";
+@import "libs/unsemantic-grid-responsive.scss";
+@import "libs/unsemantic-grid-responsive-tablet.scss";
+
+@import "libs/owl.carousel.scss";
+@import "libs/owl.theme.scss";
+@import "libs/sweetalert.scss";
+@import "libs/olevmedia_shortcodes.scss";
+@import "libs/newsletter_plugin_form.scss";
+
+@import "templates/header.scss";
+@import "templates/footer.scss";
+
+@import "pages/homepage.scss";
+@import "pages/page.scss";
+@import "pages/category.scss";
+@import "pages/agenda.scss";
+@import "pages/associados.scss";
+@import "pages/servicos.scss";
+@import "pages/parceiros.scss";
+@import "pages/contact.scss";

@@ -1,0 +1,30 @@
+.omsc-toggle{
+    border:1px solid #fff !important;
+}
+.omsc-toggle-title{
+    border:0;
+    background:$blue;
+    color:#fff;
+
+    @include bold(24px, #fff);
+}
+.omsc-toggle-title:hover, .omsc-toggle.omsc-expanded .omsc-toggle-title{
+    background:$superDarkBlue !important;
+}
+.omsc-toggle-inner{
+    background:$almostWhite;
+
+    p{
+        font-size:16px !important;
+    }
+    a{
+        font-weight:700;
+        @include allprefix(transition, color 0.5s ease);
+    }
+    a:hover{
+        color:$darkGray;
+    }
+    strong{
+        font-size:16px !important;
+    }
+}
